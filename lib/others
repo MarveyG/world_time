@@ -1,0 +1,145 @@
+// int counter = 0;
+
+ // ElevatedButton(
+      //   onPressed: () {
+      //     setState(() {
+      //       counter += 1;
+      //     });
+      //   },
+      //   child: Text('counter is $counter'),
+      // ),
+
+      class Loading extends StatefulWidget {
+        const Loading({super.key});
+
+        @override
+        State<Loading> createState() => _LoadingState();
+      }
+
+      class _LoadingState extends State<Loading> {
+        void getData() async {
+
+      Response response = await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
+        // Map data = jsonDecode(response.body);
+        // print(data);
+        // print(data['title']);
+
+        // simulate network request for a username
+            // await Future.delayed(Duration (seconds: 3), () {
+            // print('yoshi');
+            // });
+            // print('statement');
+
+            // simulate network request to get bio of the username
+            // Future.delayed(Duration (seconds: 2), () {
+            //   print('Vegan, Musician & egg collector');
+            // });
+
+            // simulate network request for a username
+          //   String username = await Future.delayed(Duration (seconds: 3), () {
+          //     return 'yoshi';
+          //   });
+          //
+          //   // simulate network request to get bio of the username
+          //   String bio = await Future.delayed(Duration (seconds: 2), () {
+          //     return 'Vegan, Musician & egg collector';
+          //   });
+          //
+          //   print('$username - $bio');
+          //
+
+
+           void navigateToHome(String location, String flag, String time) {
+                Navigator.pushReplacementNamed(context, '/home', arguments: {
+                  'location': location,
+                  'flag': flag,
+                  'time': time,
+                });
+              }
+
+              // Usage:
+              navigateToHome(instance.location, instance.flag, instance.time);
+            }
+
+
+          //   Future<void> setupWorldTime () async {
+          //     WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
+          //     await instance.getTime();
+          //
+          //     void navigateToHome(BuildContext context, String location, String flag, String time) {
+          //       Navigator.pushReplacementNamed(context, '/home', arguments: {
+          //         'location': location,
+          //         'flag': flag,
+          //         'time': time,
+          //       });
+          //     }
+          //
+          // // Usage:
+          //    navigateToHome(context, instance.location, instance.flag, instance.time);
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:world_time/services/world_time.dart';
+//
+// class Loading extends StatefulWidget {
+//   const Loading({super.key});
+//
+//   @override
+//   State<Loading> createState() => _LoadingState();
+// }
+//
+// class _LoadingState extends State<Loading> {
+//
+//   Future<WorldTime> setupWorldTime () async {
+//     WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
+//     await instance.getTime();
+//     return instance;
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: FutureBuilder<WorldTime>(
+//         future: setupWorldTime(),
+//         builder: (context, snapshot) {
+//           if (snapshot.hasData) {
+//             WorldTime instance = snapshot.data!;
+//              Navigator.pushReplacementNamed(context, '/home', arguments: {
+//               'location': instance.location,
+//               'flag': instance.flag,
+//               'time': instance.time,
+//             });
+//
+//              return Text('');
+//           } else if (snapshot.hasError) {
+//             return Text('Error: ${snapshot.error}');
+//           } else {
+//             return const Padding(
+//               padding: EdgeInsets.all(50.0),
+//               child: Text('Loading'),
+//             );
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }
+//
+ //Map data = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>? ?? {};
+    // Map data = (ModalRoute.of(context)!.settings.arguments == null ? "NULL": ModalRoute.of(context)!.settings.arguments as String) as Map;
+    // if (data == null){
+    //
+    // }
+
+    //data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    // Map? arguments = ModalRoute.of(context)!.settings.arguments as Map?;
+    //
+    // if (arguments != null) {
+    //   data = arguments;
+    // }
+    //
+    // if (arguments == null || !arguments.containsKey('location') || !arguments.containsKey('time') || !arguments.containsKey('flag')) {
+    //   // Handle the case where 'arguments' are missing expected data
+    // }
+
